@@ -37,7 +37,7 @@ const changeFlg = () => {
 
 const router = useRouter()
 const goTo = () => {
-  router.push('/test')
+  router.replace('/test')
   console.log(1)
 }
 </script>
