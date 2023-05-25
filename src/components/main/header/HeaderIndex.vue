@@ -1,8 +1,10 @@
 <template>
-  <div class="header">header欢迎来到英雄联盟</div>
+  <div class="header"><DayNight></DayNight></div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import DayNight from './day&night/DayNight.vue'
+</script>
 
 <style lang="less" scoped>
 .header {

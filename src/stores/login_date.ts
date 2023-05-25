@@ -5,7 +5,8 @@ export const loginDateStore = defineStore('logindate', {
   state: () => {
     return {
       name: '登录',
-      flg: true
+      flg: true,
+      isday: true
     }
   },
   actions: {

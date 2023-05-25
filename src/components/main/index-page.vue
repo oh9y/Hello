@@ -20,10 +20,12 @@ import Header from './header/HeaderIndex.vue'
 </script>
 
 <style scoped lang="less">
+//主页面盒子样式
 .main_wide_box {
   width: 100vw;
   height: 100vh;
   background-color: black;
+  //主页面头部样式
   #main_wide_header_box {
     padding: 0;
   }
