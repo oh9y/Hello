@@ -1,8 +1,12 @@
 <template>
-  <div class="main">这是主页面</div>
+  <div class="main">
+    <Header></Header>
+  </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import Header from './header/HeaderIndex.vue'
+</script>
 
 <style scoped>
 .main {

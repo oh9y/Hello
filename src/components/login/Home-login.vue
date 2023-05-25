@@ -8,10 +8,10 @@
       }"
     >
       <transition name="custom-classes" enter-active-class="animate__animated animate__fadeIn">
-        <img v-if="!store.flg" class="login-img images" src="../assets/login.jpg" alt="登录" />
+        <img v-if="!store.flg" class="login-img images" src="@/assets/login.jpg" alt="登录" />
       </transition>
       <transition name="custom-classes" enter-active-class="animate__animated animate__fadeIn">
-        <img v-if="store.flg" class="register-img images" src="../assets/register.jpg" alt="注册" />
+        <img v-if="store.flg" class="register-img images" src="@/assets/register.jpg" alt="注册" />
       </transition>
       <div class="login_wrapper" :style="{ height: store.flg ? '70vh' : '80vh' }">
         <Signin v-if="store.flg"></Signin>

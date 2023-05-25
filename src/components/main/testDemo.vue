@@ -2,13 +2,14 @@
   <div class="text_box">
     <div class="test_hm">
       <h1>这是测试页面</h1>
-      <button @click="toLogin">登录</button>
-      <button @click="toMain">主页</button>
+      <el-button type="primary" round @click="toMain">主页</el-button>
+      <el-button type="primary" round @click="toLogin">登录</el-button>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+// import { Check, Delete, Edit, Message, Search, Star } from '@element-plus/icons-vue'
 import { useRouter } from 'vue-router'
 const router = useRouter()
 const toLogin = () => {
@@ -21,6 +22,9 @@ const toMain = () => {
 </script>
 
 <style lang="less" scoped>
+#1 {
+  color: black;
+}
 h1 {
   color: black;
 }

@@ -1,15 +1,15 @@
 <template>
   <div class="top-tips">
     <span>Welcome!</span>
-    <span @click="changeFlg" class="top-tips-span">注册</span>
+    <span @click="changeFlg" class="top-tips-span">登录</span>
   </div>
   <h1 class="h1-text">{{ store.name }}</h1>
   <div class="other-login">
-    <img src="../assets/QQ.png" alt="" />
+    <img src="@/assets/QQ.png" alt="" />
     <span>使用QQ登录</span>
   </div>
   <div class="login-form">
-    <form action="" @submit.prevent="goTo()">
+    <form action="">
       <div>
         <span>账号</span>
       </div>
@@ -18,27 +18,21 @@
         <span>密码</span>
       </div>
       <input type="password" autocomplete="off" />
-      <button>denglu</button>
+      <div>
+        <span>确认密码</span>
+      </div>
+      <input type="password" autocomplete="off" />
+      <button class="btn">注册</button>
     </form>
-    <button class="btn">登录</button>
   </div>
-  <router-view></router-view>
 </template>
 
 <script setup lang="ts">
 // import { toRefs } from 'vue'
 import { loginDateStore } from '@/stores/login_date'
-import { useRouter } from 'vue-router'
-
 const store = loginDateStore()
 const changeFlg = () => {
   store.changeLoginDate()
-}
-
-const router = useRouter()
-const goTo = () => {
-  router.replace('/test')
-  console.log(1)
 }
 </script>
 
@@ -111,17 +105,6 @@ const goTo = () => {
       font-size: 20px;
       cursor: pointer;
     }
-  }
-  .btn {
-    width: 150px;
-    height: 50px;
-    margin: 20px 0;
-    background-color: rgb(59, 58, 59);
-    border: 0;
-    border-radius: 5px;
-    color: #fff;
-    font-size: 20px;
-    cursor: pointer;
   }
 }
 h1 {
