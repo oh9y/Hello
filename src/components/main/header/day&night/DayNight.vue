@@ -1,6 +1,6 @@
 <template>
   <div class="">
-    <span class="button" :class="{ night: store.isday }" id="button" @click="isday">
+    <span class="button" :class="{ night: store }" id="button" @click="store = !store">
       <span class="btnInner">
         <span class="circle">
           <span class="circleNight">
@@ -200,14 +200,11 @@
 </template>
 
 <script setup lang="ts">
-import { loginDateStore } from '@/stores/login_date'
-const store = loginDateStore()
-const isday = () => {
-  store.isday = !store.isday
-}
+import { ref } from 'vue'
+let store = ref(true)
 </script>
 
-<style lang="less" scoped>
+<style scoped>
 .button {
   display: inline-block;
   line-height: 0;
@@ -218,9 +215,9 @@ const isday = () => {
   line-height: 0;
   display: inline-block;
   position: relative;
-  height: 66px;
-  width: 150px;
-  border-radius: 100px;
+  height: 22px;
+  width: 50px;
+  border-radius: 33px;
   background: #1c80da;
   box-shadow: inset 0 2px 6px #000, 0 0 3px rgba(0, 0, 0, 0.6);
   overflow: hidden;
@@ -230,12 +227,12 @@ const isday = () => {
   position: absolute;
   z-index: 2;
   overflow: hidden;
-  width: 54px;
-  height: 54px;
-  top: 6px;
-  left: 6px;
+  width: 18px;
+  height: 18px;
+  top: 2px;
+  left: 2px;
   background: #ffdd08;
-  border-radius: 100px;
+  border-radius: 33px;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.6), inset -0.5px -1px 3px rgba(0, 0, 0, 0.6),
     inset 1px 1px 3px rgba(255, 255, 255, 0.8);
 }
@@ -246,7 +243,7 @@ const isday = () => {
   left: 101%;
   width: 100%;
   height: 100%;
-  border-radius: 100px;
+  border-radius: 33px;
   background: #c7d0da;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.6), inset -0.5px -1px 2px rgba(0, 0, 0, 0.6),
     inset 1px 1px 2px rgba(255, 255, 255, 0.8);
@@ -257,7 +254,7 @@ const isday = () => {
   height: 25%;
   top: 12%;
   left: 44%;
-  border-radius: 100px;
+  border-radius: 33px;
   background: #909baf;
 }
 .circle .crater2 {
@@ -279,13 +276,13 @@ const isday = () => {
   z-index: 1;
   width: 0;
   height: 0;
-  left: 33px;
-  top: 33px;
+  left: 11px;
+  top: 11px;
 }
 .haloBox .halo {
   transition: all 0.6s ease-in-out;
-  width: 92.4px;
-  height: 92.4px;
+  width: 30.8px;
+  height: 30.8px;
   position: absolute;
   background: #fff;
   opacity: 0.1;
@@ -295,12 +292,12 @@ const isday = () => {
   transform: translate(-50%, -50%);
 }
 .haloBox .halo2 {
-  width: 117.4px;
-  height: 117.4px;
+  width: 39.13px;
+  height: 39.13px;
 }
 .haloBox .halo3 {
-  width: 142.4px;
-  height: 142.4px;
+  width: 47.47px;
+  height: 47.47px;
 }
 
 .clouds {
@@ -316,9 +313,9 @@ const isday = () => {
 .clouds .cloud {
   position: absolute;
   background: #fff;
-  border-radius: 100px;
-  width: 59.4px;
-  height: 59.4px;
+  border-radius: 33px;
+  width: 19.8px;
+  height: 19.8px;
   top: -17%;
   left: 84%;
 }
@@ -339,38 +336,38 @@ const isday = () => {
 }
 
 .clouds .cloud2 {
-  width: 44.88px;
-  height: 44.88px;
+  width: 14.96px;
+  height: 14.96 px;
   top: 39%;
   left: 69%;
 }
 .clouds .cloud3 {
-  width: 48.18px;
-  height: 48.18px;
+  width: 16.06px;
+  height: 16.06px;
   top: 47%;
   left: 54%;
 }
 .clouds .cloud4 {
-  width: 33px;
-  height: 33px;
+  width: 11px;
+  height: 11px;
   top: 64%;
   left: 49.7%;
 }
 .clouds .cloud5 {
-  width: 37.62px;
-  height: 37.62px;
+  width: 12.54px;
+  height: 12.54px;
   top: 64%;
   left: 32%;
 }
 .clouds .cloud6 {
-  width: 48.18px;
-  height: 48.18px;
+  width: 16.06px;
+  height: 16.06px;
   top: 81%;
   left: 13%;
 }
 .clouds .cloud7 {
-  width: 29.7px;
-  height: 29.7px;
+  width: 9.9px;
+  height: 9.9px;
   top: 85%;
   left: 7%;
 }
@@ -385,65 +382,65 @@ const isday = () => {
 }
 .stars .star {
   transition: all 0.6s ease-in-out;
-  transform: translateY(-20px);
+  transform: translateY(-6.67px);
   display: inline-block;
   position: absolute;
   left: 20%;
   top: 20%;
-  width: 10px;
+  width: 3.33px;
 }
 .stars .star2 {
   left: 10%;
   top: 30%;
-  width: 4px;
+  width: 1.33px;
   transition-delay: 0.1s;
 }
 .stars .star3 {
   left: 20%;
   top: 48%;
-  width: 3px;
+  width: 1px;
   transition-delay: 0.15s;
 }
 .stars .star4 {
   left: 11%;
   top: 76%;
-  width: 4px;
+  width: 1.33px;
   transition-delay: 0.24s;
 }
 .stars .star5 {
   left: 16%;
   top: 71%;
-  width: 4px;
+  width: 1.33px;
   transition-delay: 0.2s;
 }
 .stars .star6 {
   left: 23%;
   top: 79%;
-  width: 5px;
+  width: 1.67px;
   transition-delay: 0.26s;
 }
 .stars .star7 {
   left: 44%;
   top: 26%;
-  width: 4px;
+  width: 1.33px;
   transition-delay: 0.04s;
 }
 .stars .star8 {
   left: 37%;
   top: 50%;
-  width: 4px;
+  width: 1.33px;
   transition-delay: 0.14s;
 }
 .stars .star9 {
   left: 44%;
   top: 68%;
-  width: 6px;
+  width: 2px;
   transition-delay: 0.12s;
 }
 .stars .star10 {
   left: 52%;
   top: 37%;
-  width: 8px;
+  width: 2.67px;
   transition-delay: 0.05s;
 }
 
@@ -451,13 +448,13 @@ const isday = () => {
   background: #252525;
 }
 .night .circle {
-  left: 90px;
+  left: 30px;
 }
 .night .circle .circleNight {
   left: 0;
 }
 .night .haloBox {
-  left: 122px;
+  left: 40.67px;
 }
 .night .haloBox .halo {
   opacity: 0.13;
@@ -477,15 +474,15 @@ const isday = () => {
 }
 
 .button:hover .circle {
-  transform: translateX(5px);
+  transform: translateX(1.67px);
 }
 .button:hover .haloBox {
-  transform: translateX(5px);
+  transform: translateX(1.67px);
 }
 .night:hover .circle {
-  transform: translateX(-5px);
+  transform: translateX(-1.67px);
 }
 .night:hover .haloBox {
-  transform: translateX(-5px);
+  transform: translateX(-1.67px);
 }
 </style>
